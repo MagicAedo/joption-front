@@ -12,16 +12,17 @@
    <h1>Selecciona una categoria: </h1>
    <ion-list>
     <ion-item>
-      <ion-select placeholder="Seleccione una categoria">
-        <ion-select-option value="apples">Categoria1</ion-select-option>
-        <ion-select-option value="oranges">Categoria2</ion-select-option>
-        <ion-select-option value="bananas">CategoriaN</ion-select-option>
+      <ion-select placeholder="Seleccione una categoria" #thisSelect>
+        <ion-select-option *ngFor="let categoria of categorias">{{categoria.nombre}}</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
 
-  <ion-button routerLink="/cards">Ver Freelancers</ion-button>
+  <ion-button (click)="getIdCategoria(thisSelect.value)">Ver Freelancers</ion-button>
+  <!-- routerLink="/cards"  -->
 
  </ion-content>
+
+
 
  

@@ -8,34 +8,19 @@
     </ion-toolbar>
  </ion-header>
  <ion-content class="ion-padding">
-    <ion-card>
+    <ion-card *ngFor="let contrato of contratos">
         <ion-card-header>
-          <ion-card-title>Contrato 1</ion-card-title>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          <ion-card-title>{{contrato.nombreContrato}}</ion-card-title>
+          <ion-card-title>Categoria: {{contrato.freelancer.categoria.nombre}}</ion-card-title>
+          <ion-card-subtitle>Nombre freelancer: {{contrato.freelancer.nombre}} {{contrato.freelancer.apellido}}</ion-card-subtitle>
+          <ion-card-subtitle>Desde {{contrato.fechaInicial}} - Hasta {{contrato.fechaFinal}}</ion-card-subtitle>
         </ion-card-header>
-      
         <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
+          Valor contrato: {{contrato.valorContrato}} $ Metodo pago: {{contrato.metodoPago.nombreMetodoPago}}
         </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Contrato 2</ion-card-title>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        </ion-card-header>
-      
         <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Contrato N</ion-card-title>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
+          Descripción: 
+          {{contrato.descripcion}}
         </ion-card-content>
       </ion-card>
  </ion-content>

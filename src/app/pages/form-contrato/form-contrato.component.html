@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+       <ion-title>Creacion contrato</ion-title>
+       <ion-progress-bar type="indeterminate"></ion-progress-bar>
+    </ion-toolbar>
+ </ion-header>
+
+ <ion-content class="ion-padding">
+    <ion-list>
+        <ion-item>
+            <h5>Creando contrato con {{currentFreelancer.nombre}}</h5>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Nombre contrato</ion-label>
+            <ion-input [(ngModel)]="nombreContrato" placeholder="Enter text"></ion-input>
+          </ion-item>
+        <ion-item>
+          <ion-label position="floating">Descripción contrato</ion-label>
+          <ion-input [(ngModel)]="descripcionContrato" type="textarea" placeholder="Enter text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="floating">Valor contrato (COP)</ion-label>
+          <ion-input [(ngModel)]="valorContrato" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-select [(ngModel)] = "metodoPago" placeholder="Seleccione un metodo de pago" >
+              <ion-select-option *ngFor="let metodo of metodosPago" >{{metodo.nombreMetodoPago}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+        <h6>Fecha Hasta: </h6>
+        <ion-item>
+            <ion-datetime 
+            presentation="date"
+            [(ngModel)]="fechaHasta"
+            ></ion-datetime>
+        </ion-item>
+
+
+
+        <ion-button (click)="crearContrato()">Crear Contrato</ion-button>
+      
+      </ion-list>
+
+
+
+ </ion-content>
+
